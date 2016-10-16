@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>在windows10上部署Android开发环境 | voidwalker的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="部署Android的开发环境，需要三样东西：JDK，Android SDK 和 Android Studio。
+
+
+JDK（Java SDK）全称是Java Development Kit，顾名思义，JDK是提供了Java的开发环境和运行环境（Android采用Java来编写）
+同样的，Android SDK提供了Android平台的开发环境和运行环境
+Android Studio是Google">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在windows10上部署Android开发环境">
+<meta property="og:url" content="http://voidhackett.github.io/2016/10/16/在windows10上部署Android开发环境/index.html">
+<meta property="og:site_name" content="voidwalker的博客">
+<meta property="og:description" content="部署Android的开发环境，需要三样东西：JDK，Android SDK 和 Android Studio。
+
+
+JDK（Java SDK）全称是Java Development Kit，顾名思义，JDK是提供了Java的开发环境和运行环境（Android采用Java来编写）
+同样的，Android SDK提供了Android平台的开发环境和运行环境
+Android Studio是Google">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-19e5aadcebeb273f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-a037aec97c06452e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-42d9e30440ed102e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-5b5b5394e357c122.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-9c552b81bc3eab7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-d9263fe0608eab42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-eaf5d56f321a88ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-3e5364513f5c03d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-edb1a698f395a9d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-25eeb224887ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-090c111d9eae3f86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-80cdccbbbe6ef6f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-5b379358c4f8b32a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-a2ff60c714fff6a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-504094ac6a14904a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2210909-7ef1239d88fd154b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-16T02:48:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在windows10上部署Android开发环境">
+<meta name="twitter:description" content="部署Android的开发环境，需要三样东西：JDK，Android SDK 和 Android Studio。
+
+
+JDK（Java SDK）全称是Java Development Kit，顾名思义，JDK是提供了Java的开发环境和运行环境（Android采用Java来编写）
+同样的，Android SDK提供了Android平台的开发环境和运行环境
+Android Studio是Google">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2210909-19e5aadcebeb273f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+    <link rel="alternative" href="/atom.xml" title="voidwalker的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">voidwalker</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">keep calm and be free</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="#" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">voidwalker</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">voidwalker</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">keep calm and be free</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-在windows10上部署Android开发环境" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在windows10上部署Android开发环境
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>部署Android的开发环境，需要三样东西：JDK，Android SDK 和 Android Studio。</p>
+</blockquote>
+<ul>
+<li>JDK（Java SDK）全称是Java Development Kit，顾名思义，JDK是提供了Java的开发环境和运行环境（Android采用Java来编写）</li>
+<li>同样的，Android SDK提供了Android平台的开发环境和运行环境</li>
+<li>Android Studio是Google开发的Android集成开发环境。</li>
+</ul>
+<blockquote>
+<p>step 1: 获取JDK，Android SDK和Android Studio</p>
+</blockquote>
+<ul>
+<li>JDK下载链接：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br>下载页面如下如所示，64位windows电脑选择红框所示的链接下载。<br><img src="http://upload-images.jianshu.io/upload_images/2210909-19e5aadcebeb273f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+<li>Android SDK 和 Android Studio<br>由于国内”qiang“的原因，Google系的产品在国内访问不了。Luckly，除了翻墙之外，国内一些网站备份了Android的许多开发资源，推荐备份的比较全面的一个网站<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">http://www.androiddevtools.cn/</a> ，在上面可以下载到Android的各种开发工具，当然包括最重要的Android Studio和Android SDK。<br><img src="http://upload-images.jianshu.io/upload_images/2210909-a037aec97c06452e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>打开这个网站，我们选择上图所示的AS版本进行开发，在这个版本的Android Studio中集成了对应版本的SDK，无需我们另外下载SDK，开箱即用。<br>到这里，你应该按上面的教程下载好了Android Studio bundle（包含Android Studio和Android SDK）和JDK。</li>
+</ul>
+<blockquote>
+<p>step 2: Java的安装和配置</p>
+</blockquote>
+<p>打开下载好的JDK安装包，猛戳下一步<br><img src="http://upload-images.jianshu.io/upload_images/2210909-42d9e30440ed102e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"><br>如图所示，记住这个默认安装路径</p>
+<pre><code>C:\Program Files\Java\jre1.8.0_101
+</code></pre><p>接下来，要让系统能编译你的Java代码，你必须要告诉系统你的JDK路径以及你的JDK编译工具的位置。在win10上，需要配置两个系统环境变量</p>
+<ul>
+<li>path</li>
+<li>classpath<br><img src="http://upload-images.jianshu.io/upload_images/2210909-5b5b5394e357c122.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+</ul>
+<p>在Cortana搜索环境变量，点击编辑系统环境变量</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2210909-9c552b81bc3eab7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2210909-d9263fe0608eab42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2210909-eaf5d56f321a88ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>编辑path变量，在新建中添加如下路径</p>
+<pre><code>C:\Program Files\Java\jdk1.8.0_101\bin
+</code></pre><p><br><br><img src="http://upload-images.jianshu.io/upload_images/2210909-3e5364513f5c03d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>编辑classpath变量（如果没有的话，在系统变量下新建一个，命名为classpath），在新建中添加如下两条路径</p>
+<pre><code>C:\Program Files\Java\jdk1.8.0_101\lib\tools.jar
+</code></pre><p><br></p>
+<pre><code>C:\Program Files\Java\jdk1.8.0_101\lib\dt.jar
+</code></pre><p>到这里，Java就配置完毕啦，为了验证java是否成功配置完成，可以在按下电脑的 win+R 键，输入cmd，出现命令窗口。在命令窗口输入java<br><img src="http://upload-images.jianshu.io/upload_images/2210909-edb1a698f395a9d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>继续输入javac<br><img src="http://upload-images.jianshu.io/upload_images/2210909-25eeb224887ed4f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>如果java，javac两条命令的结果都如上图显示，恭喜你，java至此配置完成。</p>
+<blockquote>
+<p>step 3: Android Studio的安装和配置</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2210909-090c111d9eae3f86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>见上图，勾选Android SDK就可以在Android Studio集成SDK了。另外，Android Virtual Device和Perfomance是Android Studio的虚拟机的支持服务，没有Android真机的同学一定要勾选这两项。<br>猛戳next，按默认设置进行安装。<br><img src="http://upload-images.jianshu.io/upload_images/2210909-80cdccbbbe6ef6f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>Android Studio帅吗？点击Start a new Android Studio project来创建你的第一个Android版的Hello World吧！<br><img src="http://upload-images.jianshu.io/upload_images/2210909-5b379358c4f8b32a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="http://upload-images.jianshu.io/upload_images/2210909-a2ff60c714fff6a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>戳绿色三角按钮，你的第一个Hello World就会在虚拟器上跑起来啦，刺激吗？（有真机的同学，也可以用数据线连接电脑，打开手机的调试模式，就可以在真机运行起来了）<br><img src="http://upload-images.jianshu.io/upload_images/2210909-504094ac6a14904a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>duangduangduang~~<br>开心吗~~</p>
+<blockquote>
+<p>下一篇博文预告</p>
+</blockquote>
+<p>虽然Hello World成功的运行起来了，但是相信很多没接触过Android的小伙伴看到android的工程目录结构还是很懵逼的，咋一个简单的Hello World需要这么多东西来支撑呢？<br><img src="http://upload-images.jianshu.io/upload_images/2210909-7ef1239d88fd154b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下一篇博文将给小伙伴们讲解Android的目录结构，剖析一个Android程序是怎么运行起来的。Android世界的规则又是什么？</p>
+<blockquote>
+<p>Happy Coding !</p>
+</blockquote>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/16/在windows10上部署Android开发环境/" class="archive-article-date">
+  	<time datetime="2016-10-16T02:47:24.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-16</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/10/16/Android入门系列（一）-Android的目录结构/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Android入门系列（一）--Android的目录结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 voidwalker
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Android/" style="font-size: 10px;">Android</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
